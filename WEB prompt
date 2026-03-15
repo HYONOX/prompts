@@ -1,0 +1,187 @@
+You are an elite full-stack engineer + UI/UX designer + CRO strategist.
+Build a complete, production-ready business website as a SINGLE self-contained
+index.html file. No frameworks. No build tools. No dependencies.
+Double-clicking index.html must launch the full site instantly in any browser.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BUSINESS INPUTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Company     : [COMPANY_NAME]
+Tagline     : [TAGLINE]
+Industry    : [INDUSTRY]
+Services    : [SERVICE_1], [SERVICE_2], [SERVICE_3]
+USP         : [UNIQUE_SELLING_POINT]
+Target      : [TARGET_AUDIENCE]
+Email       : [CONTACT_EMAIL]
+Phone       : [PHONE]
+Location    : [CITY, COUNTRY]
+Brand Color : [PRIMARY_HEX] + [SECONDARY_HEX]
+Tone        : [PROFESSIONAL / BOLD / PLAYFUL / LUXURY / TECHNICAL]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+VISUAL IDENTITY — NON-NEGOTIABLE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Dark canvas: #000000 → #0A0A0F → #0D0D1A
+- Glass cards: rgba(255,255,255,0.04) + backdrop-blur(20px)
+  + border rgba(255,255,255,0.08)
+- Glow system: brand colors at 0.15-0.35 opacity, 40-120px spread
+- Film grain overlay: SVG feTurbulence at 0.025 opacity
+- Typography: Inter (Google Fonts) — hero 5-7rem/900,
+  section heads 2.5-3.5rem/700, body 1rem/400/1.6
+- Monospace metrics: JetBrains Mono
+- NO light mode. NO stock photos. NO flat design. NO clutter.
+- Holographic gradient cycling: #00F0FF → #8B5CF6 → #FF006E → #00FF88
+- All spacing generous — sections min 120px padding
+- Cursor spotlight: 500px radial gradient follows mouse
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ANIMATION SYSTEM — ALL MANDATORY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+LOAD  → 2.2s cinematic: void → particles → nav slides down →
+        headline words 3D-rotate in staggered → CTA materializes
+        with glow ring → loading bar completes → overlay dissolves
+SCROLL → IntersectionObserver on every section: translateY(40px)
+         opacity(0) → translateY(0) opacity(1) over 0.7s ease-out
+         + staggered children 120ms apart
+IDLE   → Particles drift with Perlin noise (desktop: 200, mobile: 80)
+         + mouse-repel physics (radius 120px) + floating elements
+         oscillate Y 8px/4s + glow pulses 3s sine wave
+HOVER  → Cards: lift Z 12px + scale(1.02) + glow +40% +
+         3D tilt toward cursor max 8° (track mousemove)
+         Buttons: scale(1.05) + expand glow ring
+CLICK  → scale(0.97) → spring back 0.3s + ripple glow from point
+60fps  → GPU only: transform + opacity. requestAnimationFrame.
+         prefers-reduced-motion: disable motion, keep fades only.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+REQUIRED SECTIONS — IN THIS EXACT ORDER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. LOADING SCREEN
+   Centered logo + company name holographic animation +
+   progress bar + dissolve at 2.2s
+
+2. NAV (fixed, glassmorphism)
+   Logo left + nav links center + CTA button right
+   Mobile: morphing hamburger → fullscreen overlay menu
+   Active section highlight via IntersectionObserver
+
+3. HERO (100vh)
+   Particle canvas background (mouse-repel)
+   Headline: 2-line max, per-word 3D entrance, gradient shimmer
+   Subtext: fade-up 0.4s delay
+   CTA row: Primary pill button (glow ring) + Ghost secondary
+   Floating 3D dashboard card: tilts with cursor proximity,
+   shows animated SVG graphs (line chart + bars + metric numbers)
+   Trust bar: 5 logo placeholders as glassmorphism pills
+
+4. STATS BAR
+   4 metrics: count-up on scroll, JetBrains Mono,
+   labeled, separated by gradient dividers
+
+5. SERVICES (6 cards, CSS grid 3×2 → 2×3 → 1×6)
+   Each: unique accent glow color + SVG icon + title +
+   2-line desc + "Learn more →" arrow
+   Staggered entrance 120ms + cursor-tilt physics
+
+6. ANALYTICS DASHBOARD (full-width immersive)
+   Dark cockpit panel: animated SVG revenue line chart
+   (draws path on scroll), 4 count-up metric callouts,
+   animated bar funnel, mini radar chart SVG,
+   live notification feed (cycles 5 items every 2s),
+   heatmap grid (opacity-animated cells)
+
+7. CASE STUDIES (3 cards)
+   Industry tag + metric before/after morph +
+   animated SVG spark line + client quote + CTA arrow
+   3D flip entrance on scroll
+
+8. PROCESS (4 steps)
+   Desktop: horizontal timeline, connector line draws on scroll
+   Mobile: vertical stack
+   Each step: number glyph + icon + title + desc
+   Steps illuminate sequentially as line draws
+
+9. TESTIMONIALS (carousel)
+   3+ cards: avatar initials + quote + name + role + company
+   Prev/Next arrows + dot indicators + auto-advance 5.5s
+   Active card: scale(1.05) + stronger glow
+   Inactive: opacity 0.5
+
+10. CONTACT FORM (full lead capture)
+    Fields: Full Name, Email, Company, Website,
+            Budget Range (select), Service Needed (select),
+            Challenge (textarea), Timeline (select)
+    Validation: all fields required, email format check
+    Submit → mailto:[CONTACT_EMAIL] with ALL fields
+             pre-formatted in body, subject auto-set
+    Success state: animated checkmark + thank-you message
+    Form card: glassmorphism + glow border on focus
+
+11. FINAL CTA (100vh)
+    Volumetric gradient bg + converging particles
+    Big headline: 3D emergence animation
+    Oversized button: double glow rings + orbiting particle
+    Supernova hover: rings expand + particles scatter
+    Click → ripple + mailto:[CONTACT_EMAIL]
+
+12. FOOTER
+    Animated gradient top border + 3 columns:
+    (Brand + tagline) | (Quick links) | (Contact info)
+    Social icons: 360° rotation on hover
+    Copyright line + "Built for [COMPANY_NAME]"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TECHNICAL LAWS — ZERO TOLERANCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FILE      → Single index.html. All CSS in <style>. All JS in
+            <script>. Fonts via Google Fonts <link> only.
+            No external JS libraries. No CDN scripts.
+            Pure vanilla HTML5 + CSS3 + ES6+.
+
+CSS       → CSS custom properties for all colors/spacing.
+            Unique class names (prefix: hx- ) to prevent
+            collision. No inline styles except JS-animated
+            values. Mobile-first with min-width breakpoints.
+            768px (tablet) + 1024px (desktop) + 1440px (wide).
+
+JS        → One DOMContentLoaded wrapper. Sections clearly
+            commented. requestAnimationFrame for all animation
+            loops. IntersectionObserver for scroll triggers.
+            Passive event listeners. Debounce resize handler.
+            All canvas elements with aria-hidden="true".
+
+HTML      → Semantic: header/nav/main/section/article/footer.
+            Every section has id="" for anchor navigation.
+            aria-labels on all interactive elements.
+            Skip-to-content link first in body.
+            Meta: charset, viewport, title, description,
+            og:title, og:description, og:type, canonical.
+
+PERF      → 0 layout shifts. Hardware-accelerated only.
+            will-change: transform on animated elements.
+            Image-free (use CSS/SVG/Canvas only).
+            Target: loads < 500KB total, renders < 1s.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CONTENT RULES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Write all copy yourself. Sharp, benefit-driven, no filler.
+- Hero headline must use [COMPANY_NAME] or [TAGLINE].
+- Services must reflect actual [SERVICE_1/2/3] inputs.
+- Stats must feel credible for [INDUSTRY].
+- Case studies: 3 fictional but realistic for [TARGET_AUDIENCE].
+- Testimonials: 3 fictional people in [TARGET_AUDIENCE] space.
+- All CTAs link to #contact or mailto:[CONTACT_EMAIL].
+- Footer shows [EMAIL], [PHONE], [LOCATION].
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+EXECUTION ORDER — DO NOT DEVIATE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Read ALL inputs above before writing a single line.
+2. Plan HTML structure (mental model only, don't output).
+3. Write complete <!DOCTYPE html> to </html> in ONE shot.
+4. Zero placeholders. Zero TODO comments. Zero lorem ipsum.
+5. Every section fully coded with real copy and working JS.
+6. After file is created → run build → confirm success.
+7. Output only: brief section-by-section summary of what
+   was built. Never paste raw code in chat response.
