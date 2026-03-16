@@ -1,0 +1,31 @@
+Hyonox Analytics Maintenance Run - [Insert Date: e.g. March 2026]
+
+You are in maintenance mode. Perform a quick but thorough optimization check on the Hyonox Analytics Next.js 16 marketing site.
+
+Tasks (execute efficiently):
+
+Run full verification:
+
+Bash
+
+npm run typecheck && npm run lint && npm run build && npm run lighthouse
+Check current MCPs, plugins, and tools. Update or add any new high-value free MCPs / LCP resources / plugins that can further improve velocity, performance, or observability (especially Vercel MCP, Magic UI, PostHog, or newer Next.js-specific ones).
+
+Run the autonomy agent (scripts/autonomy-agent.js) if it exists and apply any safe, high-impact suggestions.
+
+Polish one small improvement:
+
+Either improve Lighthouse Performance score
+Or enhance UI using existing shadcn/ui + Framer Motion
+Or strengthen CI/CD / observability
+Required Output Format:
+
+Maintenance Summary (date + overall health)
+Verification Results (all scripts + Lighthouse scores)
+MCP / Plugin Updates (what was added or updated)
+Changes Made (brief diffs or commands)
+Current Efficiency Gain (updated %)
+Next Maintenance Recommendations (max 3 items)
+Keep changes minimal, safe, and production-ready. Use all active MCPs (filesystem, playwright, memory, etc.). Focus on maintaining and incrementally improving the ~42% efficiency gain.
+
+Begin now.
